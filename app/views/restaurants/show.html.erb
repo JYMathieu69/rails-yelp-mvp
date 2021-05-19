@@ -7,5 +7,10 @@
     <%= @restaurant.category %>
   </p>
 
+  <% @restaurant.reviews.each do |review| %>
+  <p><%= "#{review.content} - #{review.rating}/5"%></p>
+  <% end %>
+
   <%= link_to "Restaurants List", restaurants_path %>
+  <%= link_to "Add Review", new_restaurant_review_path(@restaurant) %>
 </div>
